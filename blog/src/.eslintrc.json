@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app", "prettier"],
+  "extends": ["react-app", "react-app/jest", "prettier"],
   "plugins": ["prettier", "react"],
   "rules": {
     "prettier/prettier": [
@@ -8,9 +8,7 @@
         "tabWidth": 4
       }
     ],
-    "react/style-prop-object": "error",
-    "no-unused-vars": "off"
+    "react/style-prop-object": "error"
   }
 }
-
 
