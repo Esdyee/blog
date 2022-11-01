@@ -2,13 +2,44 @@
   "extends": ["react-app", "react-app/jest", "prettier"],
   "plugins": ["prettier", "react"],
   "rules": {
+    // tab key set
+    "indent": "off",
+    "no-tabs": "off",
+    "function-call-argument-newline": "off",
     "prettier/prettier": [
       "error",
       {
-        "tabWidth": 4
+        "tabWidth": 4,
+        "useTabs": true,
+        "indentStyle": "tab",
+        "singleQuote": false,
+        "semi": true,
+        "trailingComma": "all",
+        "printWidth": 120,
+        "arrowParens": "always",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": true,
+        "jsxSingleQuote": false,
+        "requirePragma": false,
+        "proseWrap": "preserve",
+        "quoteProps": "as-needed",
+        "insertPragma": false,
+        "endOfLine": "auto",
+        "htmlWhitespaceSensitivity": "css",
+        "vueIndentScriptAndStyle": false,
+        "embeddedLanguageFormatting": "auto",
+        "rangeStart": 0,
+        "parser": "babel",
+        "linebreak-style": 0
       }
     ],
-    "react/style-prop-object": "error"
+    "react/style-prop-object": "error",
+    "react/jsx-curly-brace-presence": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-one-expression-per-line": "off",
+    "linebreak-style": 0
   }
 }
+
 
