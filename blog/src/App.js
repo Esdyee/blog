@@ -77,7 +77,10 @@ function Modal() {
 	return (
 		<div className="modal">
 			<h4>제목</h4>
-			<p>날짜</p>
+			<p>
+				{new Date().getFullYear()}-{new Date().getMonth() + 1}-
+				{new Date().getDay() < 10 ? "0" + new Date().getDay() : new Date().getDay()}
+			</p>
 			<p>상세내용</p>
 		</div>
 	);
