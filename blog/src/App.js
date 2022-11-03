@@ -7,13 +7,16 @@ function App() {
 
 	// state: 변동시 자동으로 html에 반영되게 만들고 싶을 때 작성
 	let [글제목, 글제목변경] = useState(["남자코트 추천", "고객 추천", "우동 맛집 추천"]);
-	let [내용, c] = useState(["2022년 10월 발행", "테스트 진행 중", "Error"]);
-	let [좋아요, 좋아요변경] = useState(0);
+	let [내용, c] = useState(["2022년 10월 발행", "테스트 진행 중", "Not Error"]);
+	let [좋아요, 좋아요변경] = useState([0, 0, 0]);
 	let [modal, modal변경] = useState(false);
 
-	function 함수() {
-		// add count 좋아요
-		좋아요 = 좋아요 + 1;
+	function 좋아요함수(index) {
+		좋아요변경(() => {
+			let copy = [...좋아요];
+			copy[index]++;
+			return copy;
+		});
 	}
 
 	function 정렬() {
@@ -35,7 +38,7 @@ function App() {
 				}}>
 				정렬
 			</button>
-			<div className="list">
+			{/*			<div className="list">
 				<h4>
 					{글제목[0]}{" "}
 					<span
@@ -67,8 +70,26 @@ function App() {
 				</h4>
 				<p>{내용[2]}</p>
 			</div>
-			{/*// Model condition html*/}
+			// Model condition html*/}
 			{modal === true ? <Modal></Modal> : null}
+
+			{글제목.map((item, index) => {
+				return (
+					<div className="list" key={index}>
+						<h4>
+							{item}
+							<span
+								onClick={() => {
+									좋아요함수(index);
+								}}>
+								&nbsp; 👍
+							</span>
+							<span>{좋아요[index]}</span>
+						</h4>
+						<p>{내용[index]}</p>
+					</div>
+				);
+			})}
 		</div>
 	);
 }
