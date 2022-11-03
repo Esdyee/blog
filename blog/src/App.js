@@ -3,13 +3,11 @@ import "./App.css";
 import logo from "./logo.svg";
 
 function App() {
-	let post = "강남 우동 맛집22";
-
 	// state: 변동시 자동으로 html에 반영되게 만들고 싶을 때 작성
 	let [글제목, 글제목변경] = useState(["남자코트 추천", "고객 추천", "우동 맛집 추천"]);
 	let [내용, c] = useState(["2022년 10월 발행", "테스트 진행 중", "Not Error"]);
 	let [좋아요, 좋아요변경] = useState([0, 0, 0]);
-	let [modal, modal변경] = useState(false);
+	let [modal, 모달변경] = useState(false);
 
 	function 좋아요함수(index) {
 		좋아요변경(() => {
@@ -22,7 +20,6 @@ function App() {
 	function 정렬() {
 		let array = [...글제목];
 		array.sort();
-		console.log(array);
 		글제목변경(array);
 	}
 
@@ -79,6 +76,7 @@ function App() {
 						<h4>
 							{item}
 							<span
+								style={{ cursor: "pointer" }}
 								onClick={() => {
 									좋아요함수(index);
 								}}>
