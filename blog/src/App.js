@@ -62,7 +62,21 @@ function App() {
                             </span>
                             <span>{좋아요[index]}</span>
                         </h4>
-                        <p>{내용[index]}</p>
+                        <p>
+                            {내용[index]}&nbsp;
+                            <button
+                                onClick={() => {
+                                    let array = [...글제목];
+                                    array.splice(index, 1);
+                                    글제목변경(array);
+
+                                    let array2 = [...내용];
+                                    array2.splice(index, 1);
+                                    c(array2);
+                                }}>
+                                삭제
+                            </button>
+                        </p>
                     </div>
                 );
             })}
